@@ -16,9 +16,10 @@ function changeTitle() {
       Write a function for changing the class of the title of the page in "myHeading".
       */
 
+const heading = document.querySelector('h1');
+heading.addEventListener('click', addClassToTitle);
 function addClassToTitle() {
-  const title = document.querySelector('h1');
-  title.className = 'myHeading';
+  heading.classList.toggle('myHeading');
 }
 
 /* EXERCISE 3
@@ -50,26 +51,39 @@ function changeUrls(e) {
   link.href = '#';
   console.log(link);
   console.log(e);
-  link.textContent = 'Going to Google ';
   // setAttributes(link, {
   //   href: 'https://www.google.com',
   //   target: '_blank',
   // });
   // link.click();
+  let i = 3;
+  const timer = setInterval(() => {
+    link.textContent = `Going to Google in ${i !== 0 ? i : '🚀'}...`;
+    i--;
+    if (i === -1) clearInterval(timer);
+  }, 1000);
+
   setTimeout(() => {
     window.location = 'https://www.google.com';
-  }, 3000);
+  }, 4000);
 }
 
 /* EXERCISE 5
        Write a function for adding a new item in the second list.
        */
 
-function addToTheSecond(content) {
+const form = document.querySelector('.task-list');
+form.addEventListener('submit', addToTheSecond);
+function addToTheSecond(e) {
+  const input = document.querySelector('.input-text');
+  if (input.value === '') console.log('insert something');
+  const text = input.value;
   const secondList = document.getElementById('secondList');
   const li = document.createElement('li');
-  li.textContent = content;
+  li.textContent = text;
   secondList.appendChild(li);
+  input.value = '';
+  e.preventDefault();
 }
 
 /* EXERCISE 6
@@ -125,12 +139,15 @@ function makeItClickable() {
       Change the footer text with something else when the user clicks on it.
       */
 const footer = document.querySelector('footer > p');
-footer.style.cursor = 'pointer';
 footer.addEventListener('click', changeFooterText);
 function changeFooterText(e) {
   const textArr = footer.textContent.split(' ');
   const shuffled = textArr.sort(() => 0.5 - Math.random());
   e.target.textContent = shuffled.join(' ');
+  footer.classList.add('animate__shakeX');
+  setTimeout(() => {
+    footer.classList.remove('animate__shakeX');
+  }, 1000);
 }
 
 /* EXERCISE 11

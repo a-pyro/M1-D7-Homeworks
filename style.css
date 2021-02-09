@@ -10,9 +10,16 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 0 2rem;
+  background-color: #ccf2f4;
 }
 .myHeading {
-  color: red;
+  color: #f2a154;
+}
+h1 {
+  color: #314e52;
+  transition: 0.5s;
+  cursor: pointer;
+  user-select: none;
 }
 
 .greenify {
@@ -21,4 +28,19 @@ body {
 
 ul {
   list-style: none;
+  padding-left: 0;
+}
+
+footer {
+  cursor: pointer;
+}
+
+.btn {
+  margin: 0.5rem auto;
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+}
+
+.input-text {
+  height: 31px;
 }
