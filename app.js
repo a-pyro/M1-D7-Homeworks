@@ -101,13 +101,14 @@ function addParagraph(content) {
       */
 
 function firstUlDisappear() {
-  const sel = function (element) {
-    if (element.charAt(0) === '#') {
-      // If passed an ID...
-      return document.querySelector(element); // ... returns single element
-    }
-    return document.querySelectorAll(element); // Otherwise, returns a nodelist
-  };
+  const firstUL = document.getElementById('firstList');
+  if (firstUL.classList.contains('animate__zoomOut')) {
+    firstUL.classList.add('animate__zoomIn');
+    firstUL.classList.remove('animate__zoomOut');
+  } else {
+    firstUL.classList.add('animate__zoomOut');
+    firstUL.classList.remove('animate__zoomIn');
+  }
 }
 
 /* EXERCISE 8
