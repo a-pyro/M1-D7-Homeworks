@@ -141,7 +141,7 @@ inputField.addEventListener('keyup', (e) => {
       */
 
 window.onload = function () {
-  console.log('Loaded 🚀');
+  // alert('Loaded 🚀');
 };
 
 /* EXERCISE 13
