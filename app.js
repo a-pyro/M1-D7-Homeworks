@@ -5,7 +5,7 @@ console.log('Hi there! 🔥');
       */
 
 function changeTitle(newTitle) {
-  const title = document.querySelector('h1');
+  const title = document.querySelector('title');
   title.textContent = newTitle;
 }
 
@@ -96,7 +96,17 @@ function paintItGreen() {
       Make the heading of the page change color every time the user clicks on it.
       */
 
-function makeItClickable() {}
+function makeItClickable() {
+  const heading = document.querySelector('h1');
+  heading.style.cursor = 'pointer';
+  heading.style.userSelect = 'none';
+  heading.addEventListener('click', (e) => {
+    const randomColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
+      Math.random() * 256
+    )},${Math.floor(Math.random() * 256)})`;
+    e.target.style.color = randomColor;
+  });
+}
 
 /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
