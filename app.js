@@ -73,13 +73,24 @@ function addParagraph(content) {
       Write a function for making the first UL disappear.
       */
 
-function firstUlDisappear() {}
+function firstUlDisappear() {
+  const sel = function (element) {
+    if (element.charAt(0) === '#') {
+      // If passed an ID...
+      return document.querySelector(element); // ... returns single element
+    }
+    return document.querySelectorAll(element); // Otherwise, returns a nodelist
+  };
+}
 
 /* EXERCISE 8
       Write a function for making the background of every UL green.
       */
 
-function paintItGreen() {}
+function paintItGreen() {
+  const lists = document.querySelectorAll('ul');
+  lists.forEach((list) => list.classList.add('greenify'));
+}
 
 /* EXERCISE 9
       Make the heading of the page change color every time the user clicks on it.
