@@ -62,7 +62,7 @@ function changeUrls(e) {
   link.insertAdjacentHTML('beforebegin', img);
   let j = 6;
   const bombTimer = setInterval(() => {
-    document.querySelector('img').classList.toggle('bomb-active');
+    document.querySelector('#bomb-section').classList.toggle('bomb-active');
     j--;
     if (j === -1) clearInterval(bombTimer);
   }, 500);

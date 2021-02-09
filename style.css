@@ -57,12 +57,12 @@ footer {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  transition: 0.5s;
 }
 .bomb {
   position: relative;
   width: 300px;
   transform: scale(1.3);
-  transition: 0.5s;
 }
 
 .bomb-active {
