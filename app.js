@@ -4,25 +4,45 @@ console.log('Hi there! 🔥');
       Write a function for changing the title of the document in something else.
       */
 
-function changeTitle(newTitle) {}
+function changeTitle(newTitle) {
+  const title = document.querySelector('h1');
+  title.textContent = newTitle;
+}
 
 /* EXERCISE 2
       Write a function for changing the class of the title of the page in "myHeading".
       */
 
-function addClassToTitle() {}
+function addClassToTitle() {
+  const title = document.querySelector('h1');
+  title.className = 'myHeading';
+}
 
 /* EXERCISE 3
       Write a function for changing the text of only the p which are children of a div.
       */
 
-function changePcontent() {}
+function changePcontent() {
+  const para = document.querySelector('div > p');
+  para.textContent = 'Ciao sto facendo gli escercizi 😭';
+}
 
 /* EXERCISE 4
       Write a function for changing the destination of every link to https://www.google.com
       */
 
-function changeUrls() {}
+function changeUrls() {
+  const setAttributes = (element, objAttributes) => {
+    Object.entries(objAttributes).forEach(([attribute, value]) => {
+      console.log(attribute, value);
+      element.setAttribute(attribute, value);
+    });
+  };
+  const links = document.links;
+  Array.from(links).forEach((link) =>
+    setAttributes(link, { href: 'https://www.google.com', target: '_blank' })
+  );
+}
 
 /* EXERCISE 5
        Write a function for adding a new item in the second list.
@@ -71,7 +91,7 @@ const inputField = document.getElementById('input-field');
       */
 
 window.onload = function () {
-  console.log('🚀');
+  console.log('Loaded 🚀');
 };
 
 /* EXERCISE 13
