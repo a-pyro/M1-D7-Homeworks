@@ -130,6 +130,11 @@ function changeFooterText() {
       */
 
 const inputField = document.getElementById('input-field');
+inputField.addEventListener('keyup', (e) => {
+  const text = inputField.value;
+  const h2 = document.querySelector('h2');
+  h2.textContent = text;
+});
 
 /* EXERCISE 12
       Create a new welcome alert message when the page successfully loads.
