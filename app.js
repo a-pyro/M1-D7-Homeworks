@@ -39,22 +39,35 @@ function changeUrls() {
     });
   };
   const links = document.links;
-  Array.from(links).forEach((link) =>
-    setAttributes(link, { href: 'https://www.google.com', target: '_blank' })
-  );
+  Array.from(links).forEach((link) => {
+    setAttributes(link, {
+      href: 'https://www.google.com',
+      target: '_blank',
+    });
+    link.textContent = 'This now goes to Google!';
+  });
 }
 
 /* EXERCISE 5
        Write a function for adding a new item in the second list.
        */
 
-function addToTheSecond(content) {}
+function addToTheSecond(content) {
+  const secondList = document.getElementById('secondList');
+  const li = document.createElement('li');
+  li.textContent = content;
+  secondList.appendChild(li);
+}
 
 /* EXERCISE 6
       Write a function for adding a second paragraph to the div.
       */
 
-function addParagraph(content) {}
+function addParagraph(content) {
+  const div = document.querySelector('a + div');
+  const html = `<p>${content}</p>`;
+  div.insertAdjacentHTML('beforeend', html);
+}
 
 /* EXERCISE 7
       Write a function for making the first UL disappear.
