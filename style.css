@@ -39,8 +39,41 @@ footer {
   margin: 0.5rem auto;
   display: inline-block;
   padding: 0.3rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #314e52;
+  background-color: #ffee93;
 }
 
 .input-text {
   height: 31px;
+  border-radius: 8px;
+  border: 1px solid #e97878;
+}
+
+#bomb-section {
+  display: flex;
+  position: relative;
+  margin-bottom: 4rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.bomb {
+  position: relative;
+  width: 300px;
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+.bomb-active {
+  transform: scale(2);
+}
+
+.bomb-link-active {
+  color: #fff;
+  position: absolute;
+  top: 48%;
+  right: 51%;
+  text-decoration: none;
+  font-size: 4rem;
 }

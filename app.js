@@ -56,9 +56,18 @@ function changeUrls(e) {
   //   target: '_blank',
   // });
   // link.click();
+  link.classList.add('bomb-link-active');
   let i = 3;
+  const img = `<img src="bomb.png" class="bomb animate__animated"></img>`;
+  link.insertAdjacentHTML('beforebegin', img);
+  let j = 6;
+  const bombTimer = setInterval(() => {
+    document.querySelector('img').classList.toggle('bomb-active');
+    j--;
+    if (j === -1) clearInterval(bombTimer);
+  }, 500);
   const timer = setInterval(() => {
-    link.textContent = `Going to Google in ${i !== 0 ? i : '🚀'}...`;
+    link.textContent = `${i !== 0 ? i : '💥'}`;
     i--;
     if (i === -1) clearInterval(timer);
   }, 1000);
