@@ -112,7 +112,18 @@ function makeItClickable() {
       Change the footer text with something else when the user clicks on it.
       */
 
-function changeFooterText() {}
+function changeFooterText() {
+  const footer = document.querySelector('footer > p');
+  const textArr = footer.textContent.split(' ');
+  footer.style.cursor = 'pointer';
+
+  console.log(textArr);
+  footer.addEventListener('click', (e) => {
+    //shuffle text arr
+    const shuffled = textArr.sort(() => 0.5 - Math.random());
+    e.target.textContent = shuffled.join(' ');
+  });
+}
 
 /* EXERCISE 11
       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
