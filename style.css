@@ -6,6 +6,10 @@ html {
 }
 body {
   font-family: 'Roboto', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
 }
 .myHeading {
   color: red;
@@ -13,4 +17,8 @@ body {
 
 .greenify {
   background-color: #c7ffd8;
+}
+
+ul {
+  list-style: none;
 }

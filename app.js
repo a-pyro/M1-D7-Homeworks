@@ -4,9 +4,12 @@ console.log('Hi there! 🔥');
       Write a function for changing the title of the document in something else.
       */
 
-function changeTitle(newTitle) {
-  const title = document.querySelector('title');
-  title.textContent = newTitle;
+const title = document.querySelector('title');
+title.addEventListener('DOMContentLoaded', changeTitle());
+function changeTitle() {
+  setTimeout(() => {
+    title.textContent = 'some random title ☄️';
+  }, 2000);
 }
 
 /* EXERCISE 2
@@ -31,21 +34,31 @@ function changePcontent() {
       Write a function for changing the destination of every link to https://www.google.com
       */
 
-function changeUrls() {
-  const setAttributes = (element, objAttributes) => {
-    Object.entries(objAttributes).forEach(([attribute, value]) => {
-      console.log(attribute, value);
-      element.setAttribute(attribute, value);
-    });
-  };
-  const links = document.links;
-  Array.from(links).forEach((link) => {
-    setAttributes(link, {
-      href: 'https://www.google.com',
-      target: '_blank',
-    });
-    link.textContent = 'This now goes to Google!';
+//helper
+const setAttributes = (element, objAttributes) => {
+  Object.entries(objAttributes).forEach(([attribute, value]) => {
+    console.log(attribute, value);
+    element.setAttribute(attribute, value);
   });
+};
+
+const link = document.querySelector('a');
+link.addEventListener('click', changeUrls);
+
+function changeUrls(e) {
+  //link.removeAttribute('href');
+  link.href = '#';
+  console.log(link);
+  console.log(e);
+  link.textContent = 'Going to Google ';
+  // setAttributes(link, {
+  //   href: 'https://www.google.com',
+  //   target: '_blank',
+  // });
+  // link.click();
+  setTimeout(() => {
+    window.location = 'https://www.google.com';
+  }, 3000);
 }
 
 /* EXERCISE 5
@@ -111,18 +124,13 @@ function makeItClickable() {
 /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
       */
-
-function changeFooterText() {
-  const footer = document.querySelector('footer > p');
+const footer = document.querySelector('footer > p');
+footer.style.cursor = 'pointer';
+footer.addEventListener('click', changeFooterText);
+function changeFooterText(e) {
   const textArr = footer.textContent.split(' ');
-  footer.style.cursor = 'pointer';
-
-  console.log(textArr);
-  footer.addEventListener('click', (e) => {
-    //shuffle text arr
-    const shuffled = textArr.sort(() => 0.5 - Math.random());
-    e.target.textContent = shuffled.join(' ');
-  });
+  const shuffled = textArr.sort(() => 0.5 - Math.random());
+  e.target.textContent = shuffled.join(' ');
 }
 
 /* EXERCISE 11
@@ -141,7 +149,7 @@ inputField.addEventListener('keyup', (e) => {
       */
 
 window.onload = function () {
-  // alert('Loaded 🚀');
+  // alert('Welcome 🖖🏻');
 };
 
 /* EXERCISE 13
