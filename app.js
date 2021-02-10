@@ -139,8 +139,6 @@ function paintItGreen() {
 
 function makeItClickable() {
   const heading = document.querySelector('h1');
-  heading.style.cursor = 'pointer';
-  heading.style.userSelect = 'none';
   heading.addEventListener('click', (e) => {
     const randomColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
       Math.random() * 256
