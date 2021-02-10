@@ -108,16 +108,20 @@ function addParagraph(content) {
 /* EXERCISE 7
       Write a function for making the first UL disappear.
       */
+const showAndHide = (element) => {
+  element.classList.add('animate__animated');
+  if (element.classList.contains('animate__zoomOut')) {
+    element.classList.remove('animate__zoomOut');
+    element.classList.add('animate__zoomIn');
+  } else {
+    element.classList.remove('animate__zoomIn');
+    element.classList.add('animate__zoomOut');
+  }
+};
 
 function firstUlDisappear() {
   const firstUL = document.getElementById('firstList');
-  if (firstUL.classList.contains('animate__zoomOut')) {
-    firstUL.classList.add('animate__zoomIn');
-    firstUL.classList.remove('animate__zoomOut');
-  } else {
-    firstUL.classList.add('animate__zoomOut');
-    firstUL.classList.remove('animate__zoomIn');
-  }
+  showAndHide(firstUL);
 }
 
 /* EXERCISE 8
